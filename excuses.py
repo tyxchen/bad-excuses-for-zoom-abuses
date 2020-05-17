@@ -7,9 +7,15 @@ import random
 import re
 import mlconjug
 
+IRREGULAR = {
+    "eat": ["eating", "ate", "eaten"],
+    "sleep with": ["sleeping", "slept with", "slept with"],
+    "x-ray": ["x-raying", "x-rayed", "x-rayed"],
+}
+
 SCHEMA = [
-        "My [ORGANISM] [ACTION:ps] [COMMONOBJECT:a].",
-    "My [ORGANISM] [ACTION_OBJECT:ps] to its death.",
+    "My [ORGANISM] [ACTION:ps] [COMMONOBJECT:a].",
+    "My [ORGANISM] [ACTION_NO_OBJECT:ps] to its death.",
     "if I open my camera [ORGANISM:p] from [PLACE] will come and [ACTION] me.",
     "Internet Explorer doesn't support [ACTION:pc] right now.",
 ]
@@ -36,8 +42,12 @@ def excuse_from_scheme(scheme, d):
         if 'p' in flags: # pluralize
             sub = pluralize(sub)
         if 'ps' in flags: # past simple
+            if sub in IRREGULAR:
+                sub = IRREGULAR[sub][1]
             sub = conjug.conjugate(sub).conjug_info["indicative"]["indicative past tense"]["1p"]
         if 'pc' in flags: # present continuous
+            if sub in IRREGULAR:
+                sub = IRREGULAR[sub][0]
             sub = conjug.conjugate(sub).conjug_info["indicative"]["indicative present continuous"]["1p 1p"]
 
         return sub
