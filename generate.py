@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import json
-import nltk 
+import nltk
 
 """Conjugate verbs to tenses"""
 
@@ -26,9 +26,11 @@ ACTION = {
     "eat",
     "eliminate",
     "excrete",
+    "execute",
     "exsanguinate",
     "freeze",
     "fry",
+    "guillotine"
     "harass",
     "haunt",
     "kiss",
@@ -61,6 +63,7 @@ ACTION_NO_OBJECT = ACTION - {
 }
 
 ORGANISM = {
+    "aardvark",
     "alligator",
     "dog",
     "goose",
@@ -75,12 +78,69 @@ COMMONOBJECT = {
     "zoo",
     "glass bottle",
     "textbook",
+    "lamp",
+    "window",
 }
 
 PLACE = {
     "The Nether",
     "Hogwarts",
     "Ottawa",
+    "Hell",
+    "MC",
+    "Swamps of Dagobah",
+    "Narnia",
+    "Edmonton",
+    "Hyrule",
+    "Oz",
+    "Kara-Tur",
+    "Essos",
+    "Tatooine",
+    "Naboo",
+    "Zzyzx",
+    "Hell, Michigan",
+    "Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch",
+    "Mordor",
+}
+
+UTILITY = {
+    "hydro",
+    "sun",
+    "flux capacitor",
+    "cremation furnace",
+    "crack supply",
+    "nuclear reactor",
+    "red matter generator",
+    "carrier pigeon service",
+}
+
+BODY_PART = {
+    "back",
+    "stomach",
+    "knee",
+    "hip",
+    "neck",
+    "intestine",
+    "jaw",
+}
+
+DISEASE = {
+    "pneumonia",
+    "bronchitis",
+    "cancer",
+    "ebola",
+    "ligma",
+    "covid-19",
+    "herpes",
+    "chlamydia",
+    "mad cow disease",
+    "dysentry",
+    "healthy water",
+    "AIDS",
+    "hepatitis A, B, C, D, and E",
+    "smallpox",
+    "obesity",
+    "Internet connectivity problems",
 }
 
 if __name__ == "__main__":
@@ -88,8 +148,13 @@ if __name__ == "__main__":
         "ACTION": ACTION,
         "ACTION_NO_OBJECT": ACTION_NO_OBJECT,
         "COMMONOBJECT": COMMONOBJECT,
+        "OBJECT": COMMONOBJECT | ORGANISM,
         "PLACE": PLACE,
-        "ORGANISM": ORGANISM
+        "ORGANISM": ORGANISM,
+        "UTILITY": UTILITY,
+        "BODY_PART": BODY_PART,
+        "DISEASE": DISEASE,
+        "DIGIT": ["0","1","2","3","4","5","6","7","8","9"],
     }
 
     with open("words.json", "w") as f:
