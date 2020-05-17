@@ -8,3 +8,5 @@ You run this bot that gives you an excuse. You type the excuse in chat. You
 relax. You go back to bed.
 
 Dictionary taken from https://github.com/dwyl/english-words.
+DnD monsters taken from https://github.com/ceryliae/DnDAppFiles.
+
