@@ -31,8 +31,6 @@ Ankheg
 Ankylosaurus
 Ape
 Arcanaloth
-Archmage
-Assassin
 Avatar of Death
 Awakened Shrub
 Awakened Tree
@@ -41,8 +39,6 @@ Azer
 Baboon
 Badger
 Balor
-Bandit
-Bandit Captain
 Banshee
 Barbed Devil
 Barlgura
@@ -51,7 +47,6 @@ Bat
 Bearded Devil
 Behir
 Beholder
-Beholder Zombie
 Berserker
 Black Bear
 Black Dragon Wyrmling
@@ -62,14 +57,11 @@ Blue Dragon Wyrmling
 Blue Slaad
 Boar
 Bone Devil
-Bone Devil Polearm
-Bone Naga (Guardian)
-Bone Naga (Spirit)
+Bone Naga
 Brass Dragon Wyrmling
 Bronze Dragon Wyrmling
 Brown Bear
 Bugbear
-Bugbear Chief
 Bulette
 Bullywug
 Cambion
@@ -102,19 +94,17 @@ Death Dog
 Death Knight
 Death Slaad
 Death Tyrant
-Deep Gnome (Svirfneblin)
+Svirfneblin
 Deer
 Demilich
 Deva
 Dire Wolf
 Displacer Beast
 Djinni
-Doppelganger
 Draft Horse
 Dragon Turtle
 Dretch
 Drider
-Drider Spellcaster
 Drow
 Drow Elite Warrior
 Drow Mage
@@ -125,7 +115,6 @@ Duergar
 Duodrone
 Dust Mephit
 Eagle
-Earth Elemental
 Efreeti
 Elephant
 Elk
@@ -133,14 +122,7 @@ Empyrean
 Erinyes
 Ettercap
 Ettin
-Faerie Dragon (Blue)
-Faerie Dragon (Green)
-Faerie Dragon (Indigo)
-Faerie Dragon (Orange)
-Faerie Dragon (Red)
-Faerie Dragon (Violet)
-Faerie Dragon (Yellow)
-Fire Elemental
+Faerie Dragon
 Fire Giant
 Fire Snake
 Flameskull
@@ -178,7 +160,6 @@ Giant Octopus
 Giant Owl
 Giant Poisonous Snake
 Giant Rat
-Giant Rat (Diseased)
 Giant Scorpion
 Giant Sea Horse
 Giant Shark
@@ -196,29 +177,22 @@ Githzerai Zerth
 Glabrezu
 Gladiator
 Gnoll
-Gnoll Fang of Yeenoghu
-Gnoll Pack Lord
 Goat
-Goblin
-Goblin Boss
 Gold Dragon Wyrmling
 Gorgon
 Goristro
 Gray Ooze
-Gray Ooze (Psychic)
 Gray Slaad
 Green Dragon Wyrmling
 Green Hag
 Green Slaad
 Grell
 Grick
-Grick Alpha
 Griffon
 Grimlock
-Guard
 Guardian Naga
 Gynosphinx
-Half-Ogre (Ogrillon)
+Ogrillon
 Half-Red Dragon Veteran
 Harpy
 Hawk
@@ -228,8 +202,6 @@ Hezrou
 Hill Giant
 Hippogriff
 Hobgoblin
-Hobgoblin Captain
-Hobgoblin Warlord
 Homunculus
 Hook Horror
 Horned Devil
@@ -237,7 +209,6 @@ Hunter Shark
 Hydra
 Hyena
 Ice Devil
-Ice Devil Spear
 Ice Mephit
 Imp
 Intellect Devourer
@@ -247,22 +218,16 @@ Jackal
 Jackalwere
 Kenku
 Killer Whale
-Knight
 Kobold
 Kraken
 Kuo-Toa
-Kuo-Toa Archpriest
-Kuo-Toa Monitor
-Kuo-Toa Whip
 Lamia
 Lemure
 Lich
 Lion
 Lizard
-Lizard King/Queen
 Lizardfolk
 Lizardfolk Shaman
-Mage
 Magma Mephit
 Magmin
 Mammoth
@@ -283,11 +248,7 @@ Minotaur Skeleton
 Monodrone
 Mud Mephit
 Mule
-Mummy
-Mummy Lord
-Myconid Adult
-Myconid Sovereign
-Myconid Sprout
+Myconid
 Nalfeshnee
 Needle Blight
 Night Hag
@@ -302,7 +263,6 @@ Ogre Zombie
 Oni
 Orc
 Orc Eye of Gruumsh
-Orc War Chief
 Orog
 Otyugh
 Owl
@@ -347,7 +307,6 @@ Rug of Smothering
 Rust Monster
 Saber-Toothed Tiger
 Sahuagin
-Sahuagin Baron
 Sahuagin Priestess
 Salamander
 Satyr
@@ -372,27 +331,15 @@ Spider
 Spined Devil
 Spirit Naga
 Sprite
-Spy
 Steam Mephit
 Stirge
 Stone Giant
 Stone Golem
 Storm Giant
-Succubus/Incubus
-Swarm of Bats
-Swarm of Beetles
-Swarm of Centipedes
-Swarm of Insects
-Swarm of Poisonous Snakes
-Swarm of Quippers
-Swarm of Rats
-Swarm of Ravens
-Swarm of Spiders
-Swarm of Wasps
+Succubus
+Incubus
 Tarrasque
 Thri-kreen
-Thri-kreen (Psionic)
-Thug
 Tiger
 Treant
 Tribal Warrior
@@ -406,18 +353,14 @@ Ultroloth
 Umber Hulk
 Unicorn
 Vampire
-Vampire Spawn
 Vampire Spellcaster
 Vampire Warrior
-Veteran
 Vine Blight
 Violet Fungus
 Vrock
 Vulture
 Warhorse
 Warhorse Skeleton
-Water Elemental
-Water Weird
 Weasel
 Werebear
 Wereboar
@@ -449,8 +392,5 @@ Young Remorhaz
 Young Silver Dragon
 Young White Dragon
 Yuan-ti Abomination
-Yuan-ti Malison Type 1
-Yuan-ti Malison Type 2
-Yuan-ti Malison Type 3
-Yuan-ti Pureblood
+Yuan-ti
 Zombie
