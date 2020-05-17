@@ -67,7 +67,7 @@ ORGANISM = {
 }
 
 with open("dnd-monsters.txt", "r") as f:
-    ORGANISM |= { m.strip() for m in f.readlines() }
+    ORGANISM |= { m.strip().lower() for m in f.readlines() }
 
 COMMONOBJECT = {
     "cat",

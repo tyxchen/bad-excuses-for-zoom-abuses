@@ -11,6 +11,7 @@ IRREGULAR = {
     "eat": ["eating", "ate", "eaten"],
     "sleep with": ["sleeping", "slept with", "slept with"],
     "x-ray": ["x-raying", "x-rayed", "x-rayed"],
+    "yeet": ["yeeting", "yeeted", "yoted"],
 }
 
 SCHEMA = [
@@ -35,7 +36,7 @@ def pluralize(word):
 def excuse_from_scheme(scheme, d):
     def replace(match):
         flags = set(match[2].split(':')) if match[2] is not None else []
-        sub = random.choice(tuple(d[match[1]])).lower()
+        sub = random.choice(tuple(d[match[1]]))
 
         if 'a' in flags: # a/an
             sub = p.a(sub)
@@ -44,11 +45,13 @@ def excuse_from_scheme(scheme, d):
         if 'ps' in flags: # past simple
             if sub in IRREGULAR:
                 sub = IRREGULAR[sub][1]
-            sub = conjug.conjugate(sub).conjug_info["indicative"]["indicative past tense"]["1p"]
+            else:
+                sub = conjug.conjugate(sub).conjug_info["indicative"]["indicative past tense"]["1p"]
         if 'pc' in flags: # present continuous
             if sub in IRREGULAR:
                 sub = IRREGULAR[sub][0]
-            sub = conjug.conjugate(sub).conjug_info["indicative"]["indicative present continuous"]["1p 1p"]
+            else:
+                sub = conjug.conjugate(sub).conjug_info["indicative"]["indicative present continuous"]["1p 1p"]
 
         return sub
 
