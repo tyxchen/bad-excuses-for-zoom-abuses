@@ -55,6 +55,12 @@ def choose_scheme(d):
         for key in re.findall(r"\[([\w_]+)(?::\w+)*\]", s):
             count += len(d[key])
         weights.append(count)
+    # scale weights
+    lowest_weight = min(weights)
+    highest_weight = max(weights)
+    avg_weight = (lowest_weight + highest_weight) / 2
+    for i in range(len(weights)):
+        weights[i] = avg_weight + (weights[i] - avg_weight) / 1.5
     total_weights = sum(weights) or 1
     WEIGHTS = list(map(lambda w: w / total_weights, weights))
     return random.choices(population=SCHEMA, weights=WEIGHTS, k=1)[0]
