@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-import re
 import json
 import nltk 
 
@@ -12,7 +11,7 @@ class SetEncoder(json.JSONEncoder):
             return list(obj)
         return json.JSONEncoder.default(self, obj)
 
-d = {
+actions = {
     "ACTION": {
         "absquatulate",
         "bang",
@@ -59,15 +58,25 @@ d = {
 ORGANISM = {
     "alligator",
     "dog",
+    "goose",
 }
 
 with open("dnd-monsters.txt", "r") as f:
-    ORGANISM |= { m for m in f.readlines() }
+    ORGANISM |= { m.strip() for m in f.readlines() }
 
-FORMS = [
-    "My [ORGANISM] [ACTION:ps] the [OBJECT].",
-    "My [ORGANISM] [ACTIONED:ps] to its death.",
-]
+COMMONOBJECT = {
+    "cat",
+    "bowling ball",
+    "zoo",
+    "glass bottle",
+    "textbook",
+}
+
+PLACE = {
+    "The Nether",
+    "Hogwarts",
+    "Ottawa",
+}
 
 IRREGULAR = {
     "add": [None, None, "added"],
@@ -120,16 +129,25 @@ def conjugate_past_simple(verb):
 
     if verb[-1] is 'e':
         return verb + "d"
-    if verb[-1] is 'y':
+    if verb[-1] is 'y' and not is_vowel(verb[-2]):
         return verb[0:-1] + "ied"
 
     return verb + "ed"
 
 if __name__ == "__main__":
-    keys = list(d.keys())
+    keys = list(actions.keys())
     for k in keys:
-        d[k + "ING"] = {conjugate_present_continuous(v) for v in d[k]}
-        d[k + "ED"] = {conjugate_past_simple(v) for v in d[k]}
-    with open("actions.json", "w") as f:
-        json.dump(d, f, cls=SetEncoder, indent=2)
+        actions[k + "ING"] = {conjugate_present_continuous(v) for v in actions[k]}
+        actions[k + "ED"] = {conjugate_past_simple(v) for v in actions[k]}
+
+    d = {
+        "COMMONOBJECT": COMMONOBJECT,
+        "PLACE": PLACE,
+        "ORGANISM": ORGANISM
+    }
+
+    d.update(actions)
+
+    with open("words.json", "w") as f:
+        json.dump(d, f, cls=SetEncoder, indent=2, sort_keys=True)
 
