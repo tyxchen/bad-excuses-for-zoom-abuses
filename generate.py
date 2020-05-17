@@ -30,7 +30,7 @@ ACTION = {
     "exsanguinate",
     "freeze",
     "fry",
-    "guillotine"
+    "guillotine",
     "harass",
     "haunt",
     "kiss",
@@ -52,6 +52,9 @@ ACTION_NO_OBJECT = ACTION - {
     "destroy",
     "discombobulate",
     "eliminate",
+    "excrete",
+    "execute",
+    "guillotine",
     "harass",
     "haunt",
     "marry",

@@ -18,7 +18,7 @@ SCHEMA = [
     "My [ORGANISM] [ACTION:ps] [COMMONOBJECT:a].",
     "The [UTILITY] went out",
     "My [ORGANISM] [ACTION_NO_OBJECT:ps] to its death.",
-    "My siblings threw [OBJECT:a] at me and it broke my jaw.",
+    "My siblings threw [OBJECT:a] at me and it broke my [BODY_PART].",
     "I got bit by [ORGANISM:a]",
     "[ORGANISM:a:c] broke into my house and I'm hiding",
     "Can't, I'm in [PLACE]",
@@ -31,6 +31,8 @@ SCHEMA = [
     "It's [DIGIT][DIGIT]:[DIGIT][DIGIT] AM on my end right now",
 ]
 
+WEIGHTS = None
+
 p = inflect.engine()
 p.classical(zero=False,herd=True,persons=False,ancient=False)
 conjug = mlconjug.Conjugator(language='en')
@@ -42,8 +44,20 @@ def pluralize(word):
         noun = [word for (word, pos) in nltk.pos_tag(nltk.word_tokenize(word)) if pos[:2] == 'NN'][-1]
     return re.sub(noun, p.plural(noun), word)
 
-def choose_schema():
-    pass
+def choose_scheme(d):
+    global WEIGHTS
+    if WEIGHTS is not None:
+        return random.choices(population=SCHEMA, weights=WEIGHTS, k=1)[0]
+    # first calculate weights
+    weights = []
+    for s in SCHEMA:
+        count = 0
+        for key in re.findall(r"\[([\w_]+)(?::\w+)*\]", s):
+            count += len(d[key])
+        weights.append(count)
+    total_weights = sum(weights) or 1
+    WEIGHTS = list(map(lambda w: w / total_weights, weights))
+    return random.choices(population=SCHEMA, weights=WEIGHTS, k=1)[0]
 
 def excuse_from_scheme(scheme, d):
     def replace(match):
