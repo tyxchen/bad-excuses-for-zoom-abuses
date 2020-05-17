@@ -65,7 +65,7 @@ def dreams():
 def excuses():
     if random.random() < 0.001:
         return "I'm in bed in my pyjamas."
-    scheme = random.choice(e.SCHEMA)
+    scheme = e.choose_scheme(words)
     return e.excuse_from_scheme(scheme, words)
 
 if __name__ == '__main__':
