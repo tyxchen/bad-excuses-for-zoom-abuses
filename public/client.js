@@ -9,13 +9,13 @@ $(function() {
   
   function getExcuses() {
     $.get('/excuses', function(excuse) {
-      $('#excuse').text(excuse);
-    });
+      $('#excuse').fadeOut(function() {
+        $(this).text(excuse)
+      }).fadeIn();
+    })
   };
 
   $('#new-excuse').click(getExcuses);
-
-  getExcuses();
 
 });
 
