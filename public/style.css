@@ -10,12 +10,13 @@
 
 body {
   font-family: helvetica, arial, sans-serif;
+  text-align: center;
   margin: 25px;
 }
 
 h1 {
   font-weight: bold;
-  color: pink;
+  color: #2dacff;
 }
 
 .bold {
@@ -52,7 +53,7 @@ p {
 
 #end {
   position: absolute;
-  bottom: 10rem;
+  bottom: 3rem;
   width: 96%;
   height: 2.5rem;            /* Footer height */
 }
