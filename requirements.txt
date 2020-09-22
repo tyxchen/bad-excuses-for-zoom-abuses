@@ -1,4 +1,4 @@
 Flask
 nltk
-mlconjug
+mlconjug3
 inflect
